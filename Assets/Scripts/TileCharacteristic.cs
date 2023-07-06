@@ -12,6 +12,8 @@ public class TileCharacteristic : MonoBehaviour
     public int x;
     public int z;
 
+    public int possibility;
+
     public void SetCoordinates(int x, int z) {
         this.x = x;
         this.z = z;

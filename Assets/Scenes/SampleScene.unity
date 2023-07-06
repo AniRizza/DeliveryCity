@@ -331,7 +331,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750389747}
-  m_LocalRotation: {x: 0.4575816, y: 0.000000015299355, z: -0.000000007873323, w: 0.88916767}
+  m_LocalRotation: {x: 0.4575816, y: -0.000000015299362, z: 0.000000007873326, w: 0.88916767}
   m_LocalPosition: {x: 0, y: 7, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -417,7 +417,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.4575816, y: 0.000000015299355, z: -0.000000007873323, w: 0.88916767}
+  m_LocalRotation: {x: 0.4575816, y: -0.000000015299362, z: 0.000000007873326, w: 0.88916767}
   m_LocalPosition: {x: 0, y: 7, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefabs:
-  - {fileID: 8481755427244208472, guid: 1d10c643e39453a46866719b2ec57f9b, type: 3}
+  - {fileID: 6285647289995507839, guid: e770d39f287f8c74283586022189b648, type: 3}
   - {fileID: 1578854376185584925, guid: 808d56306a0d0cf44814dc719a64a88f, type: 3}
   - {fileID: 8680672781349045077, guid: a6c15d459882e574f83118bd1b2d6cba, type: 3}
   - {fileID: 8013515056332249773, guid: 7c778a668ec7ac94c8716cf9a7b09154, type: 3}
@@ -593,9 +593,9 @@ MonoBehaviour:
   - {fileID: 6739387335124237682, guid: 34c44844d2b3ec4468badc7c85ece5e9, type: 3}
   - {fileID: 2298374566256116257, guid: f4ff2069936f82a418d8e3d3d93ef234, type: 3}
   - {fileID: 5743416878251308158, guid: ec797132149546c438df093183b3a74b, type: 3}
-  - {fileID: 3365811818949042990, guid: d264cf7af6f822243af2521d74e3bbc0, type: 3}
+  - {fileID: 7285400756483229416, guid: 0990880374a2f0249b53b2805d33d668, type: 3}
   - {fileID: 1831767433236990720, guid: 6d19e1553adbeb247b946c84aa9c41c0, type: 3}
-  centralTilePrefab: {fileID: 9137187067754292612, guid: 30899b76f0db27b4492ac2e0d4ca6d2b, type: 3}
+  centralTilePrefab: {fileID: 1444336288534761246, guid: 49b067268daaa9a45b1b97ec312c76ca, type: 3}
   mapSize: 5
 --- !u!4 &1436923263
 Transform:
