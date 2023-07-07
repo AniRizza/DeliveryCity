@@ -1,0 +1,14 @@
+Already done:
+ - started project, basic concept
+ - 3d models for road and buildings
+ - created algorythm for generating the city map
+ - added git
+ - started working on adding buildings models to map (in progress)
+Plans for next week:
+ - creating models of road with buildings
+ - re making central tile in order to fit into (general color scheme)
+  + adding city decorations (green lawn, streat lights, etc)
+ - adding car (player) model
+  + making car move on right click
+ - adding interaction blobs models
+ - code refactoring

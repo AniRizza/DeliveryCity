@@ -105,6 +105,7 @@ MonoBehaviour:
   isRoadOnLeft: 0
   x: 0
   z: 0
+  possibility: 0
 --- !u!65 &-5886237069413753304
 BoxCollider:
   m_ObjectHideFlags: 0

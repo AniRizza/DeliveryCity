@@ -8,9 +8,10 @@ public class CameraController : MonoBehaviour
     public CinemachineVirtualCamera cinemachineVirtualCamera;
     public float cameraMovementSpeed;
     public float cameraHorizontalRotationSpeed;
-    public float cameraVerticalalRotationSpeed;
-    public float cameraZoomSpeed;
+    public float cameraFieldOfViewSpeed;
+    public float cameraAngleChangeSpeed;
     public int edgeSlideDistance;
+    public float fieldOfViewDefault;
     public float fieldOfViewMax;
     public float fieldOfViewMin;
 
@@ -19,7 +20,7 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fieldOfView = fieldOfViewMax/2;
+        fieldOfView = fieldOfViewDefault;
     }
 
     // Update is called once per frame
@@ -27,9 +28,9 @@ public class CameraController : MonoBehaviour
     {
         HandleCameraMovement();
         HandleCameraRotationHorizontal();
-        HandleCameraRotationVertical();
+        HandleCameraAngleChange();
         //HandleMouseEdgeSlide();
-        HandleCameraZoom();
+        HandleCameraFieldOfViewChange();
     }
 
     private void HandleCameraMovement() {
@@ -51,13 +52,13 @@ public class CameraController : MonoBehaviour
         transform.eulerAngles += new Vector3(0, rotateDirection * cameraHorizontalRotationSpeed, 0);
     }
 
-    private void HandleCameraRotationVertical() {
+    private void HandleCameraAngleChange() {
         float rotateDirection = 0f;
         if (Input.GetKey(KeyCode.Z)) rotateDirection += 1f;
         if (Input.GetKey(KeyCode.X)) rotateDirection -= 1f;
 
-        cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset += new Vector3(0, rotateDirection * cameraVerticalalRotationSpeed, 0);
-
+        cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y += rotateDirection * cameraAngleChangeSpeed;
+        //cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y = Mathf.Lerp(cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y, cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y + rotateDirection, cameraZoomSpeed);
     }
 
     private void HandleMouseEdgeSlide() {
@@ -71,11 +72,11 @@ public class CameraController : MonoBehaviour
         transform.position += moveDirection * cameraMovementSpeed * Time.deltaTime;
     }
 
-    private void HandleCameraZoom() {
-        if (Input.mouseScrollDelta.y > 0) fieldOfView -= cameraZoomSpeed;
-        if (Input.mouseScrollDelta.y < 0) fieldOfView += cameraZoomSpeed;
+    private void HandleCameraFieldOfViewChange() {
+        if (Input.mouseScrollDelta.y > 0) fieldOfView -= 5;
+        if (Input.mouseScrollDelta.y < 0) fieldOfView += 5;
         
         fieldOfView = Mathf.Clamp(fieldOfView, fieldOfViewMin, fieldOfViewMax);
-        cinemachineVirtualCamera.m_Lens.FieldOfView = Mathf.Lerp(cinemachineVirtualCamera.m_Lens.FieldOfView, fieldOfView, Time.deltaTime * cameraZoomSpeed);
+        cinemachineVirtualCamera.m_Lens.FieldOfView = Mathf.Lerp(cinemachineVirtualCamera.m_Lens.FieldOfView, fieldOfView, cameraFieldOfViewSpeed * Time.deltaTime);
     }
 }
