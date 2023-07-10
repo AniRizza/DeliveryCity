@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5892410554224319662, guid: dbddb89a26a690d44abacc8da6652d06, type: 3}
+  - {fileID: 2100000, guid: b1c4adc9f5481d04d8de5ecda1e038b1, type: 2}
   - {fileID: -1580535799172915004, guid: dbddb89a26a690d44abacc8da6652d06, type: 3}
   - {fileID: -8848810374240701247, guid: dbddb89a26a690d44abacc8da6652d06, type: 3}
   m_StaticBatchInfo:
@@ -105,6 +105,7 @@ MonoBehaviour:
   isRoadOnLeft: 0
   x: 0
   z: 0
+  possibility: 0
 --- !u!65 &-6875566926247564218
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -108,8 +108,8 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentSlope: 10
+    agentClimb: 0.5
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -481,6 +482,39 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &1297358530
 GameObject:
   m_ObjectHideFlags: 3
@@ -614,7 +648,7 @@ MonoBehaviour:
   - {fileID: 2044907833573598631, guid: ff818b43ff94eea4dafd9d1046baaf5f, type: 3}
   - {fileID: 6739387335124237682, guid: 34c44844d2b3ec4468badc7c85ece5e9, type: 3}
   - {fileID: 2298374566256116257, guid: a4b986f761fb4014ba560ada8be0c3c0, type: 3}
-  - {fileID: 5743416878251308158, guid: ec797132149546c438df093183b3a74b, type: 3}
+  - {fileID: 5743416878251308158, guid: c3e70d808878c0e4c95a3a50ce5e6ef4, type: 3}
   - {fileID: 7285400756483229416, guid: 0990880374a2f0249b53b2805d33d668, type: 3}
   - {fileID: 1831767433236990720, guid: 6d19e1553adbeb247b946c84aa9c41c0, type: 3}
   centralTilePrefab: {fileID: 1444336288534761246, guid: 49b067268daaa9a45b1b97ec312c76ca, type: 3}
