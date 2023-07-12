@@ -103,9 +103,8 @@ MonoBehaviour:
   isRoadOnBot: 1
   isRoadOnRight: 1
   isRoadOnLeft: 1
-  x: 0
-  z: 0
-  possibility: 0
+  rotationParameter: 0
+  tyleType: 4
 --- !u!65 &8899160792972675504
 BoxCollider:
   m_ObjectHideFlags: 0

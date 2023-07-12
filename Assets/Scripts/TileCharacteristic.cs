@@ -17,8 +17,10 @@ public class TileCharacteristic : MonoBehaviour
     private bool isRoadOnLeft;
     [SerializeField]
     private int rotationParameter;
+    [SerializeField]
+    private int tyleType;
 
-    public int GetNumberOfExits() {
+    private int GetNumberOfExits() {
         int numberOfExits = 0;
         if (isRoadOnTop) numberOfExits++;
         if (isRoadOnBot) numberOfExits++;
@@ -27,15 +29,7 @@ public class TileCharacteristic : MonoBehaviour
         return numberOfExits;
     }
 
-    public int GetTileType() {
-        int result = 0;
-        int exits = GetNumberOfExits();
-        if ((isRoadOnTop != isRoadOnBot) && (isRoadOnLeft != isRoadOnRight)) {
-            result = exits;
-        }
-        else result = 1;
-        return result;
-    }
+    public int GetTileType() {return tyleType;}
 
     public int GetX() {return x;}
 

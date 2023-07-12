@@ -117,11 +117,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ab5b17f0c2d0d49b31937fd1b8e622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRoadOnTopDefault: 0
-  isRoadOnBotDefault: 0
-  isRoadOnRightDefault: 0
-  isRoadOnLeftDefault: 0
-  possibility: 0
+  isRoadOnTop: 1
+  isRoadOnBot: 1
+  isRoadOnRight: 1
+  isRoadOnLeft: 1
+  rotationParameter: 0
+  tyleType: 4
 --- !u!1 &6637097552101122075
 GameObject:
   m_ObjectHideFlags: 0

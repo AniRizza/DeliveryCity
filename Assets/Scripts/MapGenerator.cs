@@ -27,13 +27,12 @@ public class MapGenerator : MonoBehaviour
         tileLength = (int) (centralTilePrefab.GetComponent<BoxCollider>().size.x * centralTilePrefab.transform.localScale.x);
         GenerateMap();
         GenerateCircularRoad();
-        //Instantiate(centralTilePrefab, new Vector3(0, 0, 0), centralTilePrefab.transform.rotation * Quaternion.Euler (0f, 0f, 0f));
+        GenerateBuildingsDecor();
     }
 
     private void GenerateMap(){
         createdTiles.Add((GameObject) Instantiate(centralTilePrefab, new Vector3(0, 0, 0), centralTilePrefab.transform.rotation));
         for (int i = 0; i < ((xMax - xMin + 1) * (yMax - yMin + 1)); i++) {
-            Debug.Log(i);
             ValidateAndCreateTile(createdTiles[i].GetComponent<TileCharacteristic>().GetX(), createdTiles[i].GetComponent<TileCharacteristic>().GetY() + 1);
             ValidateAndCreateTile(createdTiles[i].GetComponent<TileCharacteristic>().GetX() + 1, createdTiles[i].GetComponent<TileCharacteristic>().GetY());
             ValidateAndCreateTile(createdTiles[i].GetComponent<TileCharacteristic>().GetX(), createdTiles[i].GetComponent<TileCharacteristic>().GetY() - 1);
@@ -61,9 +60,9 @@ public class MapGenerator : MonoBehaviour
                 CreateTileConsiderable(isRoadOnTop, isRoadOnRight, isRoadOnBot, isRoadOnLeft,
                                     topTile.Count != 0, rightTile.Count != 0, botTile.Count != 0, leftTile.Count != 0, x, y);
             }
-            else Debug.Log("invalid not empty");
+            //else Debug.Log("invalid not empty");
         }
-        else Debug.Log("invalid border");
+        //else Debug.Log("invalid border");
     }
 
     private List<GameObject> GetTileByCoordinates(int x, int y) {
@@ -104,15 +103,15 @@ public class MapGenerator : MonoBehaviour
                 indexArrayForRandomization.Add(i);
         }
         
-        List<string> strings = indexArrayForRandomization.ConvertAll<string>(x => x.ToString());
-        Debug.Log(String.Join(", ", strings));
+        //List<string> strings = indexArrayForRandomization.ConvertAll<string>(x => x.ToString());
+        //Debug.Log(String.Join(", ", strings));
 
         int winner = UnityEngine.Random.Range(0,indexArrayForRandomization.Count);
         GameObject newTile = Instantiate(allowedTilesList[indexArrayForRandomization[winner]], 
                 new Vector3(x, 0, y) * tileLength, allowedTilesList[indexArrayForRandomization[winner]].transform.rotation);
         newTile.GetComponent<TileCharacteristic>().SetCoordinates(x, y);
         createdTiles.Add(newTile);
-        Debug.Log("New tile added with coordinates " + x + " and " + y);
+        //Debug.Log("New tile added with coordinates " + x + " and " + y);
     }
 
     private void GenerateCircularRoad() {
@@ -130,9 +129,8 @@ public class MapGenerator : MonoBehaviour
             bool isRoadOnBot = true;
             bool isRoadOnLeft = true;
             
-            if (Math.Abs(x) == Math.Abs(y)) {   
-                Debug.Log("corner");             
-                if (x == y) {
+            if (((x == xMax + 1) || (x == xMin - 1)) && ((y == yMax + 1) || (y == yMin - 1))) {              
+                if ((x == xMin - 1) && (y == yMin - 1)) {
                     direction.x = Math.Abs(direction.x);
                     direction.y = Math.Abs(direction.y);
                 }
@@ -178,5 +176,30 @@ public class MapGenerator : MonoBehaviour
             x += (int) direction.x;
             y += (int) direction.y;
         }
+    }
+
+    private void GenerateBuildingsDecor() {
+        for (int i = 1; i < createdTiles.Count; i++) {
+            List<GameObject> buildingsTilesList = new List<GameObject>();
+            switch (createdTiles[i].GetComponent<TileCharacteristic>().GetTileType()) {
+                case 4:
+                    buildingsTilesList.AddRange(buildingsTilePrefabsCrossroad);
+                    break;
+                case 3:
+                    buildingsTilesList.AddRange(buildingsTilePrefabs3Way);
+                    break;
+                case 2:
+                    buildingsTilesList.AddRange(buildingsTilePrefabsCurve);
+                    break;
+                case 1:
+                    buildingsTilesList.AddRange(buildingsTilePrefabsStraight);
+                    break;
+            }
+            int winner = UnityEngine.Random.Range(0,buildingsTilesList.Count);
+
+            Instantiate(buildingsTilesList[winner],
+                    new Vector3(createdTiles[i].GetComponent<TileCharacteristic>().GetX(), 0, createdTiles[i].GetComponent<TileCharacteristic>().GetY()) * tileLength,
+                    buildingsTilesList[winner].transform.rotation * Quaternion.Euler (0f, 90f * createdTiles[i].GetComponent<TileCharacteristic>().GetRotationParameter(), 0f));
+        }    
     }
 }
