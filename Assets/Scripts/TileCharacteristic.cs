@@ -4,34 +4,55 @@ using UnityEngine;
 
 public class TileCharacteristic : MonoBehaviour
 {
-    public bool isRoadOnTop;
-    public bool isRoadOnBot;
-    public bool isRoadOnRight;
-    public bool isRoadOnLeft;
+    private int x;
+    private int y;
 
-    public int x;
-    public int z;
+    [SerializeField]
+    private bool isRoadOnTop;
+    [SerializeField]
+    private bool isRoadOnBot;
+    [SerializeField]
+    private bool isRoadOnRight;
+    [SerializeField]
+    private bool isRoadOnLeft;
+    [SerializeField]
+    private int rotationParameter;
 
-    public int possibility;
-    private Vector3 rotationCurrent = Vector3(-90,0,0);
-
-    void Start() {
-        transform.eulerAngles = rotationCurrent;
+    public int GetNumberOfExits() {
+        int numberOfExits = 0;
+        if (isRoadOnTop) numberOfExits++;
+        if (isRoadOnBot) numberOfExits++;
+        if (isRoadOnRight) numberOfExits++;
+        if (isRoadOnLeft) numberOfExits++;
+        return numberOfExits;
     }
 
-    public void SetCoordinates(int x, int z) {
+    public int GetTileType() {
+        int result = 0;
+        int exits = GetNumberOfExits();
+        if ((isRoadOnTop != isRoadOnBot) && (isRoadOnLeft != isRoadOnRight)) {
+            result = exits;
+        }
+        else result = 1;
+        return result;
+    }
+
+    public int GetX() {return x;}
+
+    public int GetY() {return y;}
+
+    public void SetCoordinates(int x, int y) {
         this.x = x;
-        this.z = z;
+        this.y = y;
     }
 
-    public void Rotate90Clockwise() {
-        rotationCurrent.z += 90;
-        transform.eulerAngles = rotationCurrent;
+    public bool GetIsRoadOnTop() {return isRoadOnTop;}
 
-        bool temp = isRoadOnTop;
-        isRoadOnTop = isRoadOnLeft;
-        isRoadOnLeft = isRoadOnBot;
-        isRoadOnBot = isRoadOnRight;
-        isRoadOnRight = temp;
-    }
+    public bool GetIsRoadOnRight() {return isRoadOnRight;}
+
+    public bool GetIsRoadOnBot() {return isRoadOnBot;}
+
+    public bool GetIsRoadOnLeft() {return isRoadOnLeft;}
+
+    public int GetRotationParameter() {return rotationParameter;}
 }

@@ -100,12 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRoadOnTop: 1
-  isRoadOnBot: 0
+  isRoadOnBot: 1
   isRoadOnRight: 1
-  isRoadOnLeft: 1
-  x: 0
-  z: 0
-  possibility: 0
+  isRoadOnLeft: 0
+  rotationParameter: 0
 --- !u!65 &-196084227638959763
 BoxCollider:
   m_ObjectHideFlags: 0

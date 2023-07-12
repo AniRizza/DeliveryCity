@@ -99,13 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ab5b17f0c2d0d49b31937fd1b8e622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRoadOnTop: 0
-  isRoadOnBot: 1
+  isRoadOnTop: 1
+  isRoadOnBot: 0
   isRoadOnRight: 0
   isRoadOnLeft: 1
-  x: 0
-  z: 0
-  possibility: 0
+  rotationParameter: 0
 --- !u!65 &-8085804769257504294
 BoxCollider:
   m_ObjectHideFlags: 0
