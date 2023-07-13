@@ -13,12 +13,13 @@ GameObject:
   - component: {fileID: 352841036601664500}
   - component: {fileID: 7497061111381099719}
   - component: {fileID: -5886237069413753304}
+  - component: {fileID: -8917346775331236654}
   m_Layer: 0
   m_Name: Street_Curve_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1490313042876782747
 Transform:
@@ -118,3 +119,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.000018, y: 2.0000005, z: 0.2500006}
   m_Center: {x: -0.000008463863, y: -0.000000005960465, z: 0.025000004}
+--- !u!114 &-8917346775331236654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298374566256116257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0338a23456baf6345bdc645b5bc88781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

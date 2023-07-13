@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Constants;
+using Unity.AI.Navigation;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class MapGenerator : MonoBehaviour
     public List<GameObject> buildingsTilePrefabs3Way;
     public List<GameObject> buildingsTilePrefabsCrossroad;
 
-    public GameObject centralTilePrefab;
+    private GameObject centralTile;
     public int xMin;
     public int xMax;
     public int yMin;
@@ -21,17 +22,22 @@ public class MapGenerator : MonoBehaviour
 
     private int tileLength;
     private List<GameObject> createdTiles;
+    public NavMeshSurface surface;
+    public GameObject parentObject;
 
     void Start() {
         createdTiles = new List<GameObject>();
-        tileLength = (int) (centralTilePrefab.GetComponent<BoxCollider>().size.x * centralTilePrefab.transform.localScale.x);
+        centralTile = GameObject.Find("Central_Tile");
+        tileLength = (int) (centralTile.GetComponent<BoxCollider>().size.x * centralTile.transform.localScale.x);
         GenerateMap();
         GenerateCircularRoad();
         GenerateBuildingsDecor();
+        surface.BuildNavMesh();
     }
 
     private void GenerateMap(){
-        createdTiles.Add((GameObject) Instantiate(centralTilePrefab, new Vector3(0, 0, 0), centralTilePrefab.transform.rotation));
+        //createdTiles.Add((GameObject) Instantiate(centralTilePrefab, new Vector3(0, 0, 0), centralTilePrefab.transform.rotation));
+        createdTiles.Add(centralTile);
         for (int i = 0; i < ((xMax - xMin + 1) * (yMax - yMin + 1)); i++) {
             ValidateAndCreateTile(createdTiles[i].GetComponent<TileCharacteristic>().GetX(), createdTiles[i].GetComponent<TileCharacteristic>().GetY() + 1);
             ValidateAndCreateTile(createdTiles[i].GetComponent<TileCharacteristic>().GetX() + 1, createdTiles[i].GetComponent<TileCharacteristic>().GetY());
@@ -108,7 +114,7 @@ public class MapGenerator : MonoBehaviour
 
         int winner = UnityEngine.Random.Range(0,indexArrayForRandomization.Count);
         GameObject newTile = Instantiate(allowedTilesList[indexArrayForRandomization[winner]], 
-                new Vector3(x, 0, y) * tileLength, allowedTilesList[indexArrayForRandomization[winner]].transform.rotation);
+                new Vector3(x, 0, y) * tileLength, allowedTilesList[indexArrayForRandomization[winner]].transform.rotation, parentObject.transform);
         newTile.GetComponent<TileCharacteristic>().SetCoordinates(x, y);
         createdTiles.Add(newTile);
         //Debug.Log("New tile added with coordinates " + x + " and " + y);
@@ -199,7 +205,8 @@ public class MapGenerator : MonoBehaviour
 
             Instantiate(buildingsTilesList[winner],
                     new Vector3(createdTiles[i].GetComponent<TileCharacteristic>().GetX(), 0, createdTiles[i].GetComponent<TileCharacteristic>().GetY()) * tileLength,
-                    buildingsTilesList[winner].transform.rotation * Quaternion.Euler (0f, 90f * createdTiles[i].GetComponent<TileCharacteristic>().GetRotationParameter(), 0f));
+                    buildingsTilesList[winner].transform.rotation * Quaternion.Euler (0f, 90f * createdTiles[i].GetComponent<TileCharacteristic>().
+                    GetRotationParameter(), 0f), parentObject.transform);
         }    
     }
 }

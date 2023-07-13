@@ -13,12 +13,13 @@ GameObject:
   - component: {fileID: 8373675001219529592}
   - component: {fileID: 6057050045598338586}
   - component: {fileID: -3657645646221975612}
+  - component: {fileID: 8138481806213422786}
   m_Layer: 0
   m_Name: Street_3Way_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7241341596763799575
 Transform:
@@ -118,3 +119,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0000002, y: 2.0000637, z: 0.25000006}
   m_Center: {x: 0, y: 0, z: 0.024999999}
+--- !u!114 &8138481806213422786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013515056332249773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0338a23456baf6345bdc645b5bc88781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
