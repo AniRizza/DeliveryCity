@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2402174294959691217}
   m_Layer: 0
   m_Name: Street_3Way_3
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -131,3 +131,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0338a23456baf6345bdc645b5bc88781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTileOnPath: 0
+  blobPrefab: {fileID: 781081679384216177, guid: 8407cdc559ea5ce4ea23a42b055bd4c1, type: 3}

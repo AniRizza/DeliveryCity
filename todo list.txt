@@ -1,3 +1,4 @@
+08.07
 Already done:
  - started project, basic concept
  - 3d models for road and buildings
@@ -12,3 +13,18 @@ Plans for next week:
   + making car move on right click
  - adding interaction blobs models
  - code refactoring
+
+13.07
+future plans
+ - forrest city border
+ - sky globe not default
+ - continue work with navmesh
+ - highlight path
+ - fix central tile
+ - UI design
+done
+ - buildings
+ - car movement
+ - tile generation possibility
+ - code refactoring
+ - dynamic grid size
