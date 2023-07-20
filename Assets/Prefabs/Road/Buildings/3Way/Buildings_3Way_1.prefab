@@ -114,6 +114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House4
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d5823398e6b1aa44a11be42474b5239, type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d5823398e6b1aa44a11be42474b5239, type: 3}
 --- !u!4 &99759013516731089 stripped
@@ -351,6 +355,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 21fac1362f9528344bb929911ed4482b, type: 3}
       propertyPath: m_Name
       value: Flat
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 21fac1362f9528344bb929911ed4482b, type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21fac1362f9528344bb929911ed4482b, type: 3}
@@ -663,10 +671,14 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 3694fec750e45ad4a8ddef250cb01fee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 23c0ccb9c2394f54aa8f86d3b5b03adf, type: 2}
+      objectReference: {fileID: 2100000, guid: a1e8f0c36e8e1da40a6166de1f3e9b3b, type: 2}
     - target: {fileID: 919132149155446097, guid: 3694fec750e45ad4a8ddef250cb01fee, type: 3}
       propertyPath: m_Name
       value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3694fec750e45ad4a8ddef250cb01fee, type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3694fec750e45ad4a8ddef250cb01fee, type: 3}

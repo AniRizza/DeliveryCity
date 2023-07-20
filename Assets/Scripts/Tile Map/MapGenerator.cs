@@ -33,6 +33,7 @@ public class MapGenerator : MonoBehaviour
         GenerateCircularRoad();
         GenerateBuildingsDecor();
         surface.BuildNavMesh();
+        GameObject.Find("DeliveryEventsController").GetComponent<DeliveryEventsController>().StartDeliveryEvents();
     }
 
     private void GenerateMap(){

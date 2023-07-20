@@ -189,10 +189,14 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 3694fec750e45ad4a8ddef250cb01fee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 23c0ccb9c2394f54aa8f86d3b5b03adf, type: 2}
+      objectReference: {fileID: 2100000, guid: b61d3776ae537b740a3858795e14cf47, type: 2}
     - target: {fileID: 919132149155446097, guid: 3694fec750e45ad4a8ddef250cb01fee, type: 3}
       propertyPath: m_Name
       value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3694fec750e45ad4a8ddef250cb01fee, type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3694fec750e45ad4a8ddef250cb01fee, type: 3}
@@ -276,6 +280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8afc5ab43c67bb8469173dd57995d641, type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8afc5ab43c67bb8469173dd57995d641, type: 3}
 --- !u!4 &3100340322835492426 stripped
@@ -357,6 +365,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bb4873f15bacf1642accd26239d7c7f9, type: 3}
       propertyPath: m_Name
       value: Flat2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bb4873f15bacf1642accd26239d7c7f9, type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb4873f15bacf1642accd26239d7c7f9, type: 3}
@@ -517,6 +529,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bb4873f15bacf1642accd26239d7c7f9, type: 3}
       propertyPath: m_Name
       value: Flat2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bb4873f15bacf1642accd26239d7c7f9, type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb4873f15bacf1642accd26239d7c7f9, type: 3}
@@ -755,6 +771,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd9bde2e611cf8343b4931b97d327194, type: 3}
       propertyPath: m_Name
       value: House3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bd9bde2e611cf8343b4931b97d327194, type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9bde2e611cf8343b4931b97d327194, type: 3}
