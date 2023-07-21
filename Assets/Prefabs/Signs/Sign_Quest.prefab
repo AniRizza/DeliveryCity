@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4481645135873685702}
   - component: {fileID: 1861947936327027724}
   - component: {fileID: -1721307626469543056}
+  - component: {fileID: -8558228638640043497}
   m_Layer: 0
   m_Name: Sign_Quest
   m_TagString: Untagged
@@ -94,5 +95,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3298f8956b09c93438d355aed86b6429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8558228638640043497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204363719095152089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 084744457f733db41bcff59b29d2a66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

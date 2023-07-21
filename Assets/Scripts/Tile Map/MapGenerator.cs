@@ -8,11 +8,13 @@ using Unity.AI.Navigation;
 public class MapGenerator : MonoBehaviour
 {
     public List<GameObject> roadTilePrefabs;
+    public GameObject fogPrefab;
 
     public List<GameObject> buildingsTilePrefabsCurve;
     public List<GameObject> buildingsTilePrefabsStraight;
     public List<GameObject> buildingsTilePrefabs3Way;
     public List<GameObject> buildingsTilePrefabsCrossroad;
+    public List<GameObject> forestTilePrefabs;
 
     private GameObject centralTile;
     public int xMin;
@@ -31,9 +33,12 @@ public class MapGenerator : MonoBehaviour
         tileLength = (int) (centralTile.GetComponent<BoxCollider>().size.x * centralTile.transform.localScale.x);
         GenerateMap();
         GenerateCircularRoad();
+        GenerateForestBorder();
         GenerateBuildingsDecor();
         surface.BuildNavMesh();
         GameObject.Find("DeliveryEventsController").GetComponent<DeliveryEventsController>().StartDeliveryEvents();
+        GameObject.Find("Camera Controller").GetComponent<CameraController>().SetBorder(
+            (xMax + 1) * tileLength, (xMin - 1) * tileLength, (yMax + 1) * tileLength, (yMin - 1) * tileLength);
     }
 
     private void GenerateMap(){
@@ -104,6 +109,9 @@ public class MapGenerator : MonoBehaviour
                     break;
                 case 1:
                     possibility = POSSIBILITY_STRAIGHT;
+                    break;
+                case 0:
+                    possibility = POSSIBILITY_EMPTY;
                     break;
             }
             for (int j = 0; j < possibility; j++)
@@ -185,6 +193,46 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
+    private void GenerateForestBorder() {
+        Vector2 direction = new Vector2(0, -1);
+        int x = xMax + 2;
+        int y = yMax + 1;
+        for (int i = 0; i < ((xMax - xMin + 3) * 2 + (yMax - yMin + 3) * 2 + 4); i++) {
+            if (((x == xMax + 2) || (x == xMin - 2)) && ((y == yMax + 2) || (y == yMin - 2))) {
+                var tempDir = direction.y;
+                direction.y = direction.x;
+                direction.x = tempDir;
+
+                float fogDirectionX = -direction.x;
+                float fogDirectionY = -fogDirectionX;   
+                if (((x == xMin - 2) && (y == yMin - 2)) || ((x == xMin + 2) && (y == yMin + 2))) {
+                    direction.x = Math.Abs(direction.x);
+                    direction.y = Math.Abs(direction.y);
+                    fogDirectionX = -direction.y;
+                    fogDirectionY = fogDirectionX;
+                }
+                CreateFog(x, y, fogDirectionX/2, fogDirectionY/2);
+            }
+            else {
+                CreateFog(x, y, -direction.y, direction.x);
+            }
+            CreateTileConsiderable(false, false, false, false,
+                                    true, true, true, true, x, y);
+            x += (int) direction.x;
+            y += (int) direction.y;
+        }
+    }
+
+    private void CreateFog(int x, int y, float xDirection, float yDirection) {
+        GameObject fogObject = Instantiate(fogPrefab, new Vector3(x, 0, y) * tileLength, fogPrefab.transform.rotation, parentObject.transform);
+        var particleSystem = fogObject.GetComponent<ParticleSystem>();
+        var velocityModule = particleSystem.velocityOverLifetime;
+        particleSystem.Stop();
+        velocityModule.zMultiplier = yDirection;
+        velocityModule.xMultiplier = xDirection;
+        particleSystem.Play();
+    }
+
     private void GenerateBuildingsDecor() {
         for (int i = 1; i < createdTiles.Count; i++) {
             List<GameObject> buildingsTilesList = new List<GameObject>();
@@ -200,6 +248,9 @@ public class MapGenerator : MonoBehaviour
                     break;
                 case 1:
                     buildingsTilesList.AddRange(buildingsTilePrefabsStraight);
+                    break;
+                case 0:
+                    buildingsTilesList.AddRange(forestTilePrefabs);
                     break;
             }
             int winner = UnityEngine.Random.Range(0,buildingsTilesList.Count);

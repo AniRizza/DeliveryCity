@@ -28,3 +28,19 @@ done
  - tile generation possibility
  - code refactoring
  - dynamic grid size
+
+21.07
+done
+ - more buildings diversity
+ - forest
+ - border fog
+ - car future path
+ - skyglobe
+ - events system (in progress)
+ - slight adjust camera control
+future
+ - continue work on events (check if buildings too close)
+ - continue work with camera
+ - make blobs brighter
+ - UI design
+ - Music system

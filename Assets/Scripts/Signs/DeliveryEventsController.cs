@@ -7,34 +7,26 @@ public class DeliveryEventsController : MonoBehaviour
     public GameObject signQuestPrefab;
     public GameObject signDonePrefab;
 
-    private List<Vector3> allBuildingsCoordinatesList;
+    private GameObject[] allBuildingsObjects;
     [SerializeField]
     private float floatingSignOffset = 5;
 
     public void StartDeliveryEvents() {
-        allBuildingsCoordinatesList = new List<Vector3>();
-        GameObject[] buildingsObjects = GameObject.FindGameObjectsWithTag("Building");
-        Debug.Log("all buildings " + buildingsObjects.Length);
-        foreach (GameObject building in buildingsObjects)
-        {
-            allBuildingsCoordinatesList.Add(building.transform.position);
-        }
-        Debug.Log("here");
+        allBuildingsObjects = GameObject.FindGameObjectsWithTag("Building");
+        Debug.Log("all buildings " + allBuildingsObjects.Length);
         GenerateEvent();
     }
 
     public void GenerateEvent() {
-        int indexFrom = UnityEngine.Random.Range(0, allBuildingsCoordinatesList.Count);
-        int indexTo = UnityEngine.Random.Range(0, allBuildingsCoordinatesList.Count - 1);
+        int indexFrom = UnityEngine.Random.Range(0, allBuildingsObjects.Length);
+        int indexTo = UnityEngine.Random.Range(0, allBuildingsObjects.Length - 1);
         if (indexTo >= indexFrom) indexTo++;
         //if buildings to close thet reselect second
 
         GameObject blobFrom = Instantiate(signQuestPrefab,
-            new Vector3(allBuildingsCoordinatesList[indexFrom].x, floatingSignOffset, allBuildingsCoordinatesList[indexFrom].z),
+            new Vector3(allBuildingsObjects[indexFrom].transform.position.x, floatingSignOffset, allBuildingsObjects[indexFrom].transform.position.z),
             signQuestPrefab.transform.rotation);
-        GameObject blobTo = Instantiate(signDonePrefab,
-            new Vector3(allBuildingsCoordinatesList[indexTo].x, floatingSignOffset, allBuildingsCoordinatesList[indexTo].z),
-            signDonePrefab.transform.rotation);
+        blobFrom.GetComponent<QuestSignScript>().SetQuestDeliveryLocation(allBuildingsObjects[indexTo].transform.position);
     }
 
 }
