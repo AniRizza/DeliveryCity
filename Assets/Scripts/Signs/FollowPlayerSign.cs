@@ -5,8 +5,7 @@ using UnityEngine;
 public class FollowPlayerSign : MonoBehaviour
 {
     public GameObject player;
-    [SerializeField]
-    private float hightAbovePlayer;
+    public float hightAbovePlayer;
     private Vector3 offset;
 
     void Start()

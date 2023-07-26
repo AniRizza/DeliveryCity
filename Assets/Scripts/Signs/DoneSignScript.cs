@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestSignScript : MonoBehaviour
+public class DoneSignScript : MonoBehaviour
 {
-    public GameObject signDonePrefab;
     public GameObject questHitboxPrefab;
-
-    private Vector3 deliveryLocation;
     private Vector3 tileCenter;
 
     // Start is called before the first frame update
@@ -22,12 +19,7 @@ public class QuestSignScript : MonoBehaviour
         Instantiate(questHitboxPrefab, tileCenter, questHitboxPrefab.transform.rotation, transform);
     }
 
-    public void SetQuestDeliveryLocation(Vector3 deliveryLocation) {
-        this.deliveryLocation = deliveryLocation;
-    }
-
-    public void StartDeliveryQuest() {
-        Instantiate(signDonePrefab, deliveryLocation, signDonePrefab.transform.rotation);
+    public void FinishDeliveryQuest() {
         Destroy(gameObject);
     }
 }

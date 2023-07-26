@@ -258,7 +258,7 @@ public class MapGenerator : MonoBehaviour
             Instantiate(buildingsTilesList[winner],
                     new Vector3(createdTiles[i].GetComponent<TileCharacteristic>().GetX(), 0, createdTiles[i].GetComponent<TileCharacteristic>().GetY()) * tileLength,
                     buildingsTilesList[winner].transform.rotation * Quaternion.Euler (0f, 90f * createdTiles[i].GetComponent<TileCharacteristic>().
-                    GetRotationParameter(), 0f), parentObject.transform);
+                    GetRotationParameter(), 0f), createdTiles[i].transform);
         }    
     }
 }

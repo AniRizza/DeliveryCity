@@ -13,7 +13,7 @@ public class DeliveryEventsController : MonoBehaviour
 
     public void StartDeliveryEvents() {
         allBuildingsObjects = GameObject.FindGameObjectsWithTag("Building");
-        Debug.Log("all buildings " + allBuildingsObjects.Length);
+        //Debug.Log("all buildings " + allBuildingsObjects.Length);
         GenerateEvent();
     }
 
@@ -26,7 +26,8 @@ public class DeliveryEventsController : MonoBehaviour
         GameObject blobFrom = Instantiate(signQuestPrefab,
             new Vector3(allBuildingsObjects[indexFrom].transform.position.x, floatingSignOffset, allBuildingsObjects[indexFrom].transform.position.z),
             signQuestPrefab.transform.rotation);
-        blobFrom.GetComponent<QuestSignScript>().SetQuestDeliveryLocation(allBuildingsObjects[indexTo].transform.position);
+        blobFrom.GetComponent<QuestSignScript>().SetQuestDeliveryLocation(
+            new Vector3(allBuildingsObjects[indexTo].transform.position.x, floatingSignOffset, allBuildingsObjects[indexTo].transform.position.z));
     }
 
 }
