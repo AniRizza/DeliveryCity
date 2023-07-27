@@ -4,3 +4,4 @@ Logs/
 Packages/
 ProjectSettings/
 UserSettings/
+*.meta

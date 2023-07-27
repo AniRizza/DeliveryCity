@@ -20,6 +20,7 @@ public class DoneSignScript : MonoBehaviour
     }
 
     public void FinishDeliveryQuest() {
+        GetComponent<AudioSource>().Play();
         Destroy(gameObject);
     }
 }
