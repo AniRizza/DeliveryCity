@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8746099565918328857}
   - component: {fileID: 6810731807773977811}
   - component: {fileID: -1963255018645897153}
+  - component: {fileID: 8848927631469718128}
   m_Layer: 0
   m_Name: Sign_Event
   m_TagString: Untagged
@@ -96,3 +97,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3298f8956b09c93438d355aed86b6429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8848927631469718128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009243097976917254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e028e547f1c6e40905fbbeb7456fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questHitboxPrefab: {fileID: 5428282163831277401, guid: 1b07795d2c54e9f44bb3c91e14337e60, type: 3}

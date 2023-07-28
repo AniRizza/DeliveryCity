@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoneSignScript : MonoBehaviour
+public class RoadEventSignScript : MonoBehaviour
 {
     public GameObject questHitboxPrefab;
     private Vector3 tileCenter;
 
-    // Start is called before the first frame update
     void Start()
     {
         Collider[] colliders = Physics.OverlapSphere(new Vector3(transform.position.x, 0, transform.position.z), 1f /* Radius */);
@@ -17,10 +16,6 @@ public class DoneSignScript : MonoBehaviour
             }
         }
         Instantiate(questHitboxPrefab, tileCenter, questHitboxPrefab.transform.rotation, transform);
-    }
-
-    public void FinishDeliveryQuest() {
-        GameObject.Find("Audio Manager").GetComponent<AudioManager>().PlaySound("QuestDone");
-        Destroy(gameObject);
+        GameObject.Find("Audio Manager").GetComponent<AudioManager>().PlaySound("RoadEvent");
     }
 }

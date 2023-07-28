@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3811581683350384140}
   m_Layer: 0
   m_Name: Street_Empty
-  m_TagString: Tile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8

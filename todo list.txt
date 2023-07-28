@@ -44,3 +44,13 @@ future
  - make blobs brighter
  - UI design
  - Music system
+
+28.07
+done
+ - finalized camera movements
+ - remade blobs
+ - music system
+ - finalized delivery events
+ - started work on road events
+future
+ vacation for 1 week

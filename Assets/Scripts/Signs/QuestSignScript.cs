@@ -20,6 +20,7 @@ public class QuestSignScript : MonoBehaviour
             }
         }
         Instantiate(questHitboxPrefab, tileCenter, questHitboxPrefab.transform.rotation, transform);
+        GameObject.Find("Audio Manager").GetComponent<AudioManager>().PlaySound("QuestAppear");
     }
 
     public void SetQuestDeliveryLocation(Vector3 deliveryLocation) {

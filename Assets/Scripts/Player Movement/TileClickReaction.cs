@@ -13,7 +13,7 @@ public class TileClickReaction : MonoBehaviour
 
             //Debug.Log("Pressed left-click on x " + x + " y " + y);
             GameObject.Find("Car").GetComponent<CarMovementPath>().SetTarget(transform.position);
-            GameObject.Find("Car").GetComponent<AudioSource>().Play();
+            GameObject.Find("Audio Manager").GetComponent<AudioManager>().PlaySound("Car");
         }
     }
 }

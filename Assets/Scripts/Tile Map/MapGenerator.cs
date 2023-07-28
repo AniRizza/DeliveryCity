@@ -36,7 +36,7 @@ public class MapGenerator : MonoBehaviour
         GenerateForestBorder();
         GenerateBuildingsDecor();
         surface.BuildNavMesh();
-        GameObject.Find("DeliveryEventsController").GetComponent<DeliveryEventsController>().StartDeliveryEvents();
+        GameObject.Find("Delivery Events Controller").GetComponent<DeliveryEventsController>().StartDeliveryEvents();
         GameObject.Find("Camera Controller").GetComponent<CameraController>().SetBorder(
             (xMax + 1) * tileLength, (xMin - 1) * tileLength, (yMax + 1) * tileLength, (yMin - 1) * tileLength);
     }
