@@ -25,7 +25,6 @@ public class MapGenerator : MonoBehaviour
     private int tileLength;
     private List<GameObject> createdTiles;
     public NavMeshSurface surface;
-    public GameObject parentObject;
 
     void Start() {
         createdTiles = new List<GameObject>();
@@ -123,7 +122,7 @@ public class MapGenerator : MonoBehaviour
 
         int winner = UnityEngine.Random.Range(0,indexArrayForRandomization.Count);
         GameObject newTile = Instantiate(allowedTilesList[indexArrayForRandomization[winner]], 
-                new Vector3(x, 0, y) * tileLength, allowedTilesList[indexArrayForRandomization[winner]].transform.rotation, parentObject.transform);
+                new Vector3(x, 0, y) * tileLength, allowedTilesList[indexArrayForRandomization[winner]].transform.rotation, transform.parent);
         newTile.GetComponent<TileCharacteristic>().SetCoordinates(x, y);
         createdTiles.Add(newTile);
         //Debug.Log("New tile added with coordinates " + x + " and " + y);
@@ -224,7 +223,7 @@ public class MapGenerator : MonoBehaviour
     }
 
     private void CreateFog(int x, int y, float xDirection, float yDirection) {
-        GameObject fogObject = Instantiate(fogPrefab, new Vector3(x, 0, y) * tileLength, fogPrefab.transform.rotation, parentObject.transform);
+        GameObject fogObject = Instantiate(fogPrefab, new Vector3(x, 0, y) * tileLength, fogPrefab.transform.rotation, transform.parent);
         var particleSystem = fogObject.GetComponent<ParticleSystem>();
         var velocityModule = particleSystem.velocityOverLifetime;
         particleSystem.Stop();

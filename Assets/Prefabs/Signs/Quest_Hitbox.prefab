@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3137825902479961199}
   - component: {fileID: 7989125937286316683}
   - component: {fileID: 5734704294925003977}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Quest_Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

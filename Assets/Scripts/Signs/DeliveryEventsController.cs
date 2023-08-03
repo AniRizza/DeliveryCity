@@ -51,7 +51,7 @@ public class DeliveryEventsController : MonoBehaviour
 
     IEnumerator RoadEventCountdownRoutine(GameObject eventSignBlob) {
         yield return new WaitForSeconds(30);
-        Destroy(eventSignBlob);
+        eventSignBlob.GetComponent<RoadEventSignScript>().EndEvent();
     }
 
 }

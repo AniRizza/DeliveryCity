@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6971723553495014543}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Buildings_4Way_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,6 +111,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 05cee6315ff403c47b560042975f1dc7, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05cee6315ff403c47b560042975f1dc7, type: 3}
 --- !u!4 &42897497281930581 stripped
@@ -188,6 +192,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6b7d8ff71597e884f92dee7df1d4572b, type: 3}
       propertyPath: m_Name
       value: grass 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b7d8ff71597e884f92dee7df1d4572b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b7d8ff71597e884f92dee7df1d4572b, type: 3}
@@ -267,6 +275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree round foliage
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a3270467eb28a9844b22855aea1d3ae3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3270467eb28a9844b22855aea1d3ae3, type: 3}
 --- !u!4 &1220843475797184071 stripped
@@ -345,6 +357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: deciduous tree
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ffccc22705d9dea4da9af3336f1e9d4c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffccc22705d9dea4da9af3336f1e9d4c, type: 3}
 --- !u!4 &2240652785463642184 stripped
@@ -422,6 +438,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 97af63e2ae091c54db92acda3678e833, type: 3}
       propertyPath: m_Name
       value: grass 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 97af63e2ae091c54db92acda3678e833, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97af63e2ae091c54db92acda3678e833, type: 3}
@@ -506,6 +526,10 @@ PrefabInstance:
       value: House3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bd9bde2e611cf8343b4931b97d327194, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bd9bde2e611cf8343b4931b97d327194, type: 3}
       propertyPath: m_TagString
       value: Building
       objectReference: {fileID: 0}
@@ -587,6 +611,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wooden bench
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ffe98d202d829e34a8e668c4121ecb12, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe98d202d829e34a8e668c4121ecb12, type: 3}
 --- !u!4 &4689907621309129360 stripped
@@ -665,6 +693,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trash can 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95644c8c819323d429fc5f07e225e781, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95644c8c819323d429fc5f07e225e781, type: 3}
 --- !u!4 &5566581603592997818 stripped
@@ -742,6 +774,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 21fac1362f9528344bb929911ed4482b, type: 3}
       propertyPath: m_Name
       value: Flat
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 21fac1362f9528344bb929911ed4482b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 21fac1362f9528344bb929911ed4482b, type: 3}
       propertyPath: m_TagString

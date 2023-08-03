@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3606319282574104028}
   - component: {fileID: 406418884866316921}
   - component: {fileID: 2469965578272992947}
-  - component: {fileID: 3661520590285871249}
   - component: {fileID: 7403023474504393087}
-  m_Layer: 0
+  - component: {fileID: 6085660269332440237}
+  m_Layer: 3
   m_Name: Sign_Person
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4127523680912199526}
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,7 +85,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3661520590285871249
+--- !u!114 &7403023474504393087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4127523680912199526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3298f8956b09c93438d355aed86b6429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6085660269332440237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,15 +111,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   hightAbovePlayer: 0
---- !u!114 &7403023474504393087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4127523680912199526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3298f8956b09c93438d355aed86b6429, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  minimapSignPrefab: {fileID: 1650162929723274264, guid: aed6ad00191ca284394aebeebd14f531, type: 3}

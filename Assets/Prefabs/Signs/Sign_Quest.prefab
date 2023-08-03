@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1861947936327027724}
   - component: {fileID: -1721307626469543056}
   - component: {fileID: -8558228638640043497}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sign_Quest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,3 +111,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signDonePrefab: {fileID: 26297309129259155, guid: 810ea22e470da1746bf42937e3644de9, type: 3}
   questHitboxPrefab: {fileID: 5428282163831277401, guid: 1b07795d2c54e9f44bb3c91e14337e60, type: 3}
+  minimapSignPrefab: {fileID: 252005812897263297, guid: 0fa88470588047c44880f826f3c2a297, type: 3}
