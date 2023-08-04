@@ -131,5 +131,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0338a23456baf6345bdc645b5bc88781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTileOnPath: 0
-  blobPrefab: {fileID: 781081679384216177, guid: 8407cdc559ea5ce4ea23a42b055bd4c1, type: 3}
