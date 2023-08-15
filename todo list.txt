@@ -54,3 +54,22 @@ done
  - started work on road events
 future
  vacation for 1 week
+
+04.08
+done
+ - ui
+ - time system
+ - minimap
+future
+ - street light at night
+ - pause menu
+ - game data hendler
+need to fix
+ - line render for minimap
+ - minimap light
+ - refactor tile
+ - refactor vehicle
+ - car sound
+ - camera zoom softness
+ - sound location
+ - sound loudness
