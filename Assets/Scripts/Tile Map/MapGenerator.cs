@@ -28,7 +28,7 @@ public class MapGenerator : MonoBehaviour
 
     void Start() {
         createdTiles = new List<GameObject>();
-        centralTile = GameObject.Find("Central_Tile");
+        centralTile = GameObject.Find("Central Tile");
         tileLength = (int) (centralTile.GetComponent<BoxCollider>().size.x * centralTile.transform.localScale.x);
         GenerateMap();
         GenerateCircularRoad();

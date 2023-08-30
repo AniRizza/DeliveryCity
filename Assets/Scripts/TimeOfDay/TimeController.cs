@@ -84,6 +84,6 @@ public class TimeController : MonoBehaviour
     }
 
     private void UpdateTimeOfDay() {
-        currentTime = currentTime.AddSeconds(Time.deltaTime * 1000);
+        currentTime = currentTime.AddSeconds(Time.deltaTime * 500);
     }
 }

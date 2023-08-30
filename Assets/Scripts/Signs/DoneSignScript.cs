@@ -10,6 +10,8 @@ public class DoneSignScript : MonoBehaviour
     private Vector3 tileCenter;
     private GameObject minimapObject;
 
+    public int money = 200;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,8 @@ public class DoneSignScript : MonoBehaviour
 
     public void FinishDeliveryQuest() {
         GameObject.Find("Audio Manager").GetComponent<AudioManager>().PlaySound("QuestDone");
-        GameObject.Find("Money Popup Text Holder").GetComponent<MoneyPopupTextGenerator>().ShowAddingMoneyAnimation("+ 200");
+        GameObject.Find("Money Popup Text Holder").GetComponent<MoneyPopupTextGenerator>().ShowAddingMoneyAnimation("+ " + money);
+        GameObject.Find("Money Text").GetComponent<MoneyTextScript>().UpdateMoneyAmount(money);
         Destroy(minimapObject);
         Destroy(gameObject);
     }

@@ -15,8 +15,8 @@ public class DeliveryEventsController : MonoBehaviour
     public void StartDeliveryEvents() {
         allBuildingsObjects = GameObject.FindGameObjectsWithTag("Building");
         allTileObjects = GameObject.FindGameObjectsWithTag("Tile");
-        InvokeRepeating("GenerateDelivery", 5, 60);
-        InvokeRepeating("GenerateRoadEvent", 20, 120);
+        InvokeRepeating("GenerateDelivery", 5, 30);
+        InvokeRepeating("GenerateRoadEvent", 20, 100);
     }
 
     private void GenerateDelivery() {

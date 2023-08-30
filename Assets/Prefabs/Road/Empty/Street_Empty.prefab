@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4450386009825269273}
   - component: {fileID: 8217036694155312086}
+  - component: {fileID: 8511221149077491693}
   m_Layer: 0
   m_Name: Street_Empty
   m_TagString: Tile
@@ -52,6 +53,19 @@ MonoBehaviour:
   isRoadOnLeft: 0
   rotationParameter: 0
   tyleType: 0
+--- !u!65 &8511221149077491693
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029674689201925982}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.25, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2806885182948549608
 PrefabInstance:
   m_ObjectHideFlags: 0
