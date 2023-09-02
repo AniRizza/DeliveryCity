@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public class TimeController : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class TimeController : MonoBehaviour
     private DateTime currentTime;
     private Vector3 timelineIndicatorStartPosition;
 
+    public static bool isDay;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,11 @@ public class TimeController : MonoBehaviour
         endTime = TimeSpan.FromHours(endHour);
         shiftLength = CalculateTimeDifference(startTime, endTime);
         timelineIndicatorStartPosition = timelinIndicator.transform.position;
+
+        if (startHour < sunriseHour) {
+            isDay = false;
+        }
+        else isDay = true;
     }
 
     // Update is called once per frame
@@ -43,6 +51,7 @@ public class TimeController : MonoBehaviour
         UpdateTimeOfDay();
         RotateSun();
         PlaceTimelineMarker();
+        TurnTheLightswitchWhenSunset();
     }
 
     private void RotateSun() {
@@ -75,6 +84,13 @@ public class TimeController : MonoBehaviour
         timelinIndicator.transform.position = new Vector3(currentTimelinIndicatorPosition, timelineIndicatorStartPosition.y, timelineIndicatorStartPosition.z);
     }
 
+    private void TurnTheLightswitchWhenSunset() {
+        if ((currentTime.TimeOfDay > sunriseTime && currentTime.TimeOfDay < sunsetTime && !isDay) || 
+            ((currentTime.TimeOfDay < sunriseTime || currentTime.TimeOfDay > sunsetTime) && isDay)) {
+            isDay = !isDay;
+        }
+    }
+
     private TimeSpan CalculateTimeDifference (TimeSpan fromTime, TimeSpan toTime) {
         TimeSpan difference = toTime - fromTime;
         if (difference. TotalSeconds < 0) {
@@ -84,6 +100,6 @@ public class TimeController : MonoBehaviour
     }
 
     private void UpdateTimeOfDay() {
-        currentTime = currentTime.AddSeconds(Time.deltaTime * 500);
+        currentTime = currentTime.AddSeconds(Time.deltaTime * 2000);
     }
 }

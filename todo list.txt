@@ -63,7 +63,7 @@ done
 future
  - street light at night
  - pause menu
- - game data hendler
+ - game data handler
 need to fix
  - line render for minimap
  - minimap light
@@ -72,4 +72,16 @@ need to fix
  - car sound
  - camera zoom softness
  - sound location
- - sound loudness
+
+01.09
+done
+ - minimap light
+ - refactor tile
+ - money holder
+ - pause menu
+need to do
+ - timeline generative markers
+ - check if event can happen at forest tile / central tile
+ - destroy request if too long waiting
+ - money amount depends on time pased from moment when taken quest
+ - pause game by esc
