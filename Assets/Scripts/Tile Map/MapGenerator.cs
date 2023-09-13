@@ -27,6 +27,7 @@ public class MapGenerator : MonoBehaviour
     public NavMeshSurface surface;
 
     void Start() {
+        Time.timeScale = 1f;
         createdTiles = new List<GameObject>();
         centralTile = GameObject.Find("Central Tile");
         tileLength = (int) (centralTile.GetComponent<BoxCollider>().size.x * centralTile.transform.localScale.x);

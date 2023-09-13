@@ -27,6 +27,7 @@ public class TimeController : MonoBehaviour
     private Vector3 timelineIndicatorStartPosition;
 
     public static bool isDay;
+    public UnityEvent endOfDayEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +53,7 @@ public class TimeController : MonoBehaviour
         RotateSun();
         PlaceTimelineMarker();
         TurnTheLightswitchWhenSunset();
+        if (currentTime.TimeOfDay >= endTime) endOfDayEvent.Invoke();
     }
 
     private void RotateSun() {
@@ -100,6 +102,6 @@ public class TimeController : MonoBehaviour
     }
 
     private void UpdateTimeOfDay() {
-        currentTime = currentTime.AddSeconds(Time.deltaTime * 2000);
+        currentTime = currentTime.AddSeconds(Time.deltaTime * 500);
     }
 }
