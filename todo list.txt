@@ -73,15 +73,28 @@ need to fix
  - camera zoom softness
  - sound location
 
-01.09
+02.09
 done
  - minimap light
  - refactor tile
  - money holder
  - pause menu
-need to do
- - timeline generative markers
- - check if event can happen at forest tile / central tile
+ - building light at night
+ - street lights
+future
+ - refactor tile
+ - refactor vehicle
  - destroy request if too long waiting
  - money amount depends on time pased from moment when taken quest
- - pause game by esc
+ - timeline generative markers
+need to do
+ - check if event can happen at forest tile / central tile
+ - luminating fog
+ - lerp camera rotation
+ - car sound
+ - camera zoom softness
+ - sound location
+ - line render for minimap
+ - central tile building and script
+
+08.09
