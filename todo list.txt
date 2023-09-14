@@ -96,5 +96,3 @@ need to do
  - sound location
  - line render for minimap
  - central tile building and script
-
-08.09
